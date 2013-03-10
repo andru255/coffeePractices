@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game test</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="container">
+	<canvas id="canvas" width="580" height="480"></canvas>
+    </div>
+    <!-- polifyll requestAnimationFrame-->
+    <script async>
+		// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+		window.requestAnimFrame = (function(){
+			  return  window.requestAnimationFrame       || 
+					  window.webkitRequestAnimationFrame || 
+					  window.mozRequestAnimationFrame    || 
+					  window.oRequestAnimationFrame      || 
+					  window.msRequestAnimationFrame     || 
+					  function(/* function */ callback, /* DOMElement */ element){
+						window.setTimeout(callback, 1000 / 60);
+					  };
+		})();
+    </script>
+    <script src="script/main.js"></script>
+    <script>game.init()</script>
+</body>
+</html>
